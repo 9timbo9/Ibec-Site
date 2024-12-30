@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
-    <link rel="stylesheet" href="template.css"> 
+    <title>Black-Tie Dinner</title>
+    <link rel="stylesheet" href="template.css">
     <link rel="icon" href="images/logo.png" type="image/x-icon">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -16,25 +16,73 @@
                 .catch(error => console.log('Error loading template:', error));
         });
         window.addEventListener('scroll', function() {
-        const footer = document.querySelector('.footer');
-        const scrollPosition = window.scrollY + window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
+            const footer = document.querySelector('.footer');
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
 
-        if (scrollPosition >= documentHeight) {
-            footer.style.bottom = '0'; // Show the footer
-        } else {
-            footer.style.bottom = '-100px'; // Hide the footer
-        }
-    });
+            if (scrollPosition >= documentHeight) {
+                footer.style.bottom = '0'; // Show the footer
+            } else {
+                footer.style.bottom = '-100px'; // Hide the footer
+            }
+        });
     </script>
+    <style>
+        /* Custom styling for vertical gallery */
+        .event-gallery {
+            display: flex;
+            flex-direction: column; /* Stack images vertically */
+            gap: 20px;
+            align-items: center; /* Center the images */
+            margin-top: 30px;
+        }
+
+        .event-image {
+            max-width: 80%; /* Adjust image width for vertical alignment */
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .event-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .event-image img:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <div class="header-placeholder"></div>
     <div class="container">
-        <h1>Interna</h1>
-    </div>
-  
+        <h1 class="event-title">Black-Tie Dinner</h1>
+        <p>Join us on {whenever the date is} for an unforgettable evening!</p>
+        
+        <h2>Special Guest</h2>
+        <p>We were honored to host <strong>Noel Kinder</strong>, former Chief Sustainability Officer of Nike and General Manager for Nike Vietnam. Noel shared his invaluable insights on leadership, sustainability, and managing global operations.</p>
+        <p>The evening concluded with an engaging Q&A session where attendees had the opportunity to ask Noel questions and gain deeper insights into his experiences and expertise.</p>
 
-    
+        <h2>Event Highlights</h2>
+        <div class="event-gallery">
+            <div class="event-image">
+                <img src="images/blacktie1.jpeg" alt="Black-Tie Dinner Image 1">
+            </div>
+            <div class="event-image">
+                <img src="images/blacktie2.jpeg" alt="Black-Tie Dinner Image 2">
+            </div>
+            <div class="event-image">
+                <img src="images/blacktie3.jpeg" alt="Black-Tie Dinner Image 3">
+            </div>
+        </div>
+    </div>
 </body>
 </html>

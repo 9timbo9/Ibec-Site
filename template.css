@@ -13,7 +13,6 @@ body, html {
     overflow-x: hidden;
 }
 
-
 .container {
     max-width: 1100px;
     margin: 50px auto;
@@ -24,7 +23,6 @@ body, html {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-
 
 h1, h2, h3, h4, h5, h6 {
     color: #124532; 
@@ -45,7 +43,6 @@ h2 {
 h3 {
     font-size: 24px; /* Size for smaller headings */
 }
-
 
 p {
     font-size: 18px; /* Increase font size for readability */
@@ -76,7 +73,6 @@ ul, ol {
 li {
     margin-bottom: 10px; /* Space between list items */
 }
-
 
 /* Banner Stuff */
 
@@ -142,10 +138,9 @@ li {
 }
 
 .menu-item a:hover {
-    transform: scale(1.1); /* Slight scale effect */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transform: scale(1.1); 
+    border-radius: 50%; 
 }
-
 
 .contact-button {
     margin-left: 10px;
@@ -170,7 +165,6 @@ li {
 .contact-button:active {
     opacity: .8;
 }
-
 
 /* Footer Stuff */
 
@@ -205,7 +199,7 @@ li {
     transform: scale(1.2);
 }
 
-/* Phone Compatibilty */
+/* Phone Compatibility */
 
 @media (max-width: 768px) {
     .banner {
@@ -249,4 +243,54 @@ li {
     .footer-icon {
         font-size: 24px; 
     }
+}
+
+/* Custom Styling for Events Page */
+.event-container {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.event-title {
+    font-size: 2.5rem;
+    color: #124532;
+    margin-bottom: 20px;
+}
+
+.event-date {
+    font-size: 1.5rem;
+    color: #1D664A;
+    margin-bottom: 40px;
+}
+
+.event-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.event-image {
+    flex: 1 1 calc(33% - 20px);
+    max-width: calc(33% - 20px);
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-image img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.event-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.event-image img:hover {
+    transform: scale(1.1);
 }
