@@ -77,18 +77,18 @@ li {
 /* Banner Stuff */
 
 .banner {
-    position: relative; 
-    width: 100vw; 
-    min-height: 20vh; 
-    background: #124532; 
-    display: flex; 
-    align-items: center; 
+    position: relative;
+    width: 100vw;
+    min-height: 25vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url('images/banner-background.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 10px 20px; 
-    box-sizing: border-box; 
-    background: linear-gradient(45deg,#1D664A , #124532); /* Diagonal gradient */
-    opacity: 0;
-    animation: fadeIn 1s forwards;
+    padding: 20px 50px;
+    box-sizing: border-box;
 }
 
 @keyframes fadeIn {
@@ -103,15 +103,30 @@ li {
 }
 
 .banner-img {
-    margin-right: 20px; 
-    max-width: 200px; 
-    height: auto; 
+    max-width: 150px;
+    height: auto;
 }
 
 .banner-img img:hover {
     transform: scale(1.1); /* Slightly increase size */
     transition: transform 0.5s ease-in-out;
 }
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner h1, .menu-container {
+    animation: slideIn 0.8s ease-in-out;
+}
+
 
 .menu-container {
     display: flex;
@@ -137,40 +152,42 @@ li {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
-.menu-item a:hover {
+.menu-item :hover {
     transform: scale(1.1); 
     border-radius: 50%; 
 }
 
 .contact-button {
     margin-left: 10px;
-    background-color: #124532;
-    color: aliceblue;
     border-radius: 20px;
     height: 50px;
     width: 150px; 
     border: 1px solid aliceblue;
     cursor: pointer;
-    transition: background-color .15s, color .15s;
+    transition: transform 0.3s ease-in-out, background-color 0.15s, color 0.15s;
     font-size: 24px; 
     font-weight: 700; 
     line-height: 1; 
+    background-color: transparent; /* Transparent background */
+    color: aliceblue;
 }
 
 .contact-button:hover {
-    background-color: aliceblue;
-    color: #124532;
+    transform: scale(1.1); 
+    background-color: aliceblue; 
+    color: black;
 }
 
 .contact-button:active {
-    opacity: .8;
+    opacity: 0.8;
 }
+
 
 /* Footer Stuff */
 
 .footer {
     width: 100vw;
-    height: 80px;
+    height: 60px;
     background-color: #444;
     display: flex;
     align-items: center;
@@ -197,6 +214,43 @@ li {
 .footer-icon:hover {
     color: #FFD700;
     transform: scale(1.2);
+}
+
+ /* Icon Styling */
+ .icon-heading {
+    position: relative;
+    padding-left: 50px; 
+}
+
+.icon-heading::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.icon-heading.networking::before {
+    background-image: url('facicons/networking.png');
+    background-size: cover;
+}
+
+.icon-heading.education::before {
+    background-image: url('facicons/mortarboard.png'); 
+    background-size: cover;
+}
+
+.icon-heading.career::before {
+    background-image: url('facicons/promotion.png'); 
+    background-size: cover;
+}
+
+.icon-heading.social::before {
+    background-image: url('facicons/meeting.png'); 
+    background-size: cover;
 }
 
 /* Phone Compatibility */
@@ -234,6 +288,7 @@ li {
         max-width: 95%; 
         padding: 20px 15px; 
         margin: 30px auto; 
+
     }
 
     .footer {

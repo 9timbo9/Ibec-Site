@@ -7,27 +7,7 @@
     </title>
     <link rel="stylesheet" href="template.css"> 
     <link rel="icon" href="images/logo.png" type="image/x-icon">
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            fetch('template.html') 
-                .then(response => response.text())
-                .then(data => {
-                    document.querySelector('.header-placeholder').innerHTML = data;
-                })
-                .catch(error => console.log('Error loading template:', error));
-        });
-        window.addEventListener('scroll', function() {
-        const footer = document.querySelector('.footer');
-        const scrollPosition = window.scrollY + window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
 
-        if (scrollPosition >= documentHeight) {
-            footer.style.bottom = '0'; // Show the footer
-        } else {
-            footer.style.bottom = '-100px'; // Hide the footer
-        }
-    });
-    </script>
 </head>
 <body>
     <div class="header-placeholder"></div>
@@ -36,14 +16,10 @@
         <p>
             The International Business and Economics Club (IBEC) at the University of Oregon is a student organization devoted to the professional and social development of globally-minded individuals. We aim to create a close community network of future leaders within the Lundquist College of Business and all other schools at the University of Oregon.
         </p>
-        
-    </div>
-    
 
-    <div class="container">
 
     </div>
-
-    
+    <br>
+    <script src="script.js"></script> 
 </body>
 </html>

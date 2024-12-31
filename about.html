@@ -6,27 +6,7 @@
     <title>About</title>
     <link rel="stylesheet" href="template.css"> 
     <link rel="icon" href="images/logo.png" type="image/x-icon">
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            fetch('template.html') 
-                .then(response => response.text())
-                .then(data => {
-                    document.querySelector('.header-placeholder').innerHTML = data;
-                })
-                .catch(error => console.log('Error loading template:', error));
-        });
-        window.addEventListener('scroll', function() {
-        const footer = document.querySelector('.footer');
-        const scrollPosition = window.scrollY + window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-
-        if (scrollPosition >= documentHeight) {
-            footer.style.bottom = '0'; // Show the footer
-        } else {
-            footer.style.bottom = '-100px'; // Hide the footer
-        }
-    });
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="header-placeholder"></div>
@@ -40,16 +20,16 @@
         </p>
 
         <h2>What We Do:</h2>
-        <p>
+        <p class="icon-heading networking">
             <strong>Networking:</strong> We organize events, such as our annual black-tie dinner, where students can meet and learn from professionals from various industries.
         </p>
-        <p>
+        <p class="icon-heading education">
             <strong>Education:</strong> Through workshops, guest lectures, and seminars, we provide our members with the knowledge and skills necessary to excel in international markets.
         </p>
-        <p>
+        <p class="icon-heading career">
             <strong>Career Development:</strong> We assist our members in preparing for career opportunities by offering resume workshops, interview preparation sessions, and internship referrals through our position within the LCB.
         </p>
-        <p>
+        <p class="icon-heading social">
             <strong>Social Events:</strong> We aim to balance professional growth with personal enjoyment by hosting a variety of social events to foster a sense of community and help members build lasting friendships. These events offer opportunities for members to connect, share experiences, and enjoy the diverse cultural backgrounds represented within our club.
         </p>
 
@@ -58,7 +38,7 @@
             Whether you are interested in global markets or just looking to connect with like-minded students at UO, IBEC offers valuable experiences and a welcoming community. We have no dues and no requirements, so anyone is welcome to stop by our meetings. Follow us on Instagram and LinkedIn to stay updated on our events and learn how you can get involved.
         </p>
     </div>
-    
-    
+    <br>
+    <script src="script.js"></script>
 </body>
 </html>
