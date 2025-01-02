@@ -188,7 +188,10 @@ li {
 .footer {
     width: 100vw;
     height: 60px;
-    background-color: #444;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url('images/footer-background.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -198,6 +201,7 @@ li {
     transition: bottom 0.3s ease-in-out;
     z-index: 10;
 }
+
 
 .footer-content {
     display: flex;
