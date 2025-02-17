@@ -379,6 +379,8 @@ li {
   /* Rows for each input field or group of fields */
 .form-row {
     margin-bottom: 1rem;
+    margin-right: 1rem;
+
   }
   
   /* Style the input fields and textarea */

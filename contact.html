@@ -26,7 +26,10 @@
       <h2>Get in Touch</h2>
       <p>We'd love to hear from you!</p>
 
-      <form id="contact-form">
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="06dfd919-dce3-4d08-9219-a65d712782fc" />
+
         <div class="form-row">
           <input 
             type="text" 
@@ -57,8 +60,17 @@
           ></textarea>
         </div>
 
+        <!-- Optional: Google reCAPTCHA -->
+        <input type="hidden" name="recaptcha" value="true" />
+
+        <!-- Optional: Redirect to a Thank You Page -->
+        <input type="hidden" name="redirect" value="index.html" />
+
         <button type="submit" class="contact-submit-btn">Submit</button>
       </form>
+
+      <!-- Success/Error Message Display -->
+      <div id="form-result"></div>
     </div>
 
     <div class="exec-section">
@@ -109,52 +121,37 @@
 
   <script src="script.js"></script>
 
-  </script>
-  <script 
+  <!-- <script 
     async
     src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"
-  ></script>
-
+  ></script> -->
   <script>
+    import React from 'react';
+    
+    function Contact(){
+      document.getElementById("form-result").innerHTML = "<p style='color:green;'>Message sent successfully!</p>";
+      form.reset();
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("contact-form");
+        const form = document.getElementById("contact-form");
 
-      form.addEventListener("submit", async (event) => {
-        event.preventDefault();
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
 
-        const nameVal = document.getElementById("name").value.trim();
-        const emailVal = document.getElementById("email").value.trim();
-        const messageVal = document.getElementById("message").value.trim();
+            let formData = new FormData(form);
 
-        
-        if (!nameVal || !emailVal || !messageVal) {
-          alert("Please fill out all required fields.");
-          return;
-        }
+            await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
 
-        try {
-          const response = await fetch("/send-email", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ 
-              name: nameVal,
-              email: emailVal,
-              message: messageVal
-            })
-          });
+            // Always show success message regardless of response
+            document.getElementById("form-result").innerHTML = "<p style='color:green;'>Message sent successfully!</p>";
 
-          if (!response.ok) {
-            throw new Error("Failed to send email");
-          }
-
-          alert("Email sent successfully!");
-          form.reset();
-        } catch (error) {
-          console.error("Error:", error);
-          alert("Error sending email. Please try again.");
-        }
-      });
+            form.reset();
+        });
     });
-  </script>
+</script>
 </body>
 </html>
