@@ -6,7 +6,7 @@ body, html {
     width: 100%;
     font-family: 'Arial', sans-serif; 
     color: #333333; 
-    background-image: url('images/DSC_4802.jpeg'); 
+    background-image: url('/Ibec-Site/src/includes/images/DSC_4802.jpeg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
@@ -14,7 +14,7 @@ body, html {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 50px auto;
     padding: 0 40px;
     padding-bottom: 50px; 
@@ -83,7 +83,7 @@ li {
     background: linear-gradient(
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
-    ), url('images/banner-background.jpg') center/cover no-repeat;
+    ), url('') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -191,7 +191,7 @@ li {
     background: linear-gradient(
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
-    ), url('images/footer-background.jpg') center/cover no-repeat;
+    ), url('') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -238,22 +238,22 @@ li {
 }
 
 .icon-heading.networking::before {
-    background-image: url('facicons/networking.png');
+    background-image: url('/Ibec-Site/src/includes/facicons/networking.png');
     background-size: cover;
 }
 
 .icon-heading.education::before {
-    background-image: url('facicons/mortarboard.png'); 
+    background-image: url('/Ibec-Site/src/includes/facicons/mortarboard.png'); 
     background-size: cover;
 }
 
 .icon-heading.career::before {
-    background-image: url('facicons/promotion.png'); 
+    background-image: url('/Ibec-Site/src/includes/facicons/promotion.png'); 
     background-size: cover;
 }
 
 .icon-heading.social::before {
-    background-image: url('facicons/meeting.png'); 
+    background-image: url('/Ibec-Site/src/includes/facicons/meeting.png'); 
     background-size: cover;
 }
 
