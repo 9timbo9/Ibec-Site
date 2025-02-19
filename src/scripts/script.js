@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('template.html') 
+    fetch('../includes/template/template.html') 
         .then(response => response.text())
         .then(data => {
             document.querySelector('.header-placeholder').innerHTML = data;
@@ -19,3 +19,7 @@ window.addEventListener('scroll', function () {
         footer.style.bottom = '-100px'; // Hide the footer
     }
 });
+
+
+
+console.log('Script loaded');
