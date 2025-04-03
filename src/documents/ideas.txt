@@ -1,3 +1,7 @@
-for the index:
-    maybe have a "why atten?" and/or "who should attend?"
-    learn more --> link to the about me 
+WHAT needs to be added
+
+1. Web3Forms API key (so like just need to email the API key to IBEC email) https://web3forms.com/#start
+2. A lot more events, WIB, Networking events, and such (images) and description of events
+3. Headshots of main members/ Execs and and description of their roles and such
+4. The about and index pages was just stuff i waffled so im sure yall wanna improve the text then you can provide us with that 
+5. again any images you got we'll take 
